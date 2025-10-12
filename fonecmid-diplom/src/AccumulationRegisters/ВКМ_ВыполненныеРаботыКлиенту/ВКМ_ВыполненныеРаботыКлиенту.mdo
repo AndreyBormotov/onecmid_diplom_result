@@ -8,10 +8,10 @@
     <recordKeyType typeId="62e09077-d568-4aa3-87e8-2ec94a5484eb" valueTypeId="ec209d66-e6fc-466c-894f-f5306d09b892"/>
     <recordType typeId="d19485f0-b8fc-4379-a3a1-fe69751a3369" valueTypeId="9277d9b3-ebf4-4c07-82c1-063b171bf887"/>
   </producedTypes>
-  <name>ВКМ_ВзаиморасчетыСКлиентами</name>
+  <name>ВКМ_ВыполненныеРаботыКлиенту</name>
   <synonym>
     <key>ru</key>
-    <value>Взаиморасчеты с клиентами</value>
+    <value>Выполненные работы клиенту</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <dataLockControlMode>Managed</dataLockControlMode>

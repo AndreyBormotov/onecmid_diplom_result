@@ -8,7 +8,7 @@
   <includeHelpInContents>true</includeHelpInContents>
   <content>Document.ВКМ_ОбслуживаниеКлиента</content>
   <content>Catalog.ВКМ_ОбслуживаниеКлиентаПрисоединенныеФайлы</content>
-  <content>AccumulationRegister.ВКМ_ВзаиморасчетыСКлиентами</content>
+  <content>AccumulationRegister.ВКМ_ВыполненныеРаботыКлиенту</content>
   <content>Constant.ВКМ_ТокенУправленияТелеграмБотом</content>
   <content>Constant.ВКМ_ИдентификаторГруппыДляОповещения</content>
   <content>Catalog.ВКМ_УведомленияТелеграмБоту</content>
