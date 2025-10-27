@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CalculationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="27473696-f65b-4006-b129-bab8df3adab2">
+  <producedTypes>
+    <selectionType typeId="0791a405-e6a2-469d-b8bb-76020db13faf" valueTypeId="204b1398-fd0d-49ce-a61d-9b9c181c631a"/>
+    <listType typeId="93fe27d3-2c08-4069-a0db-349dc62f4204" valueTypeId="2e7f16c1-e5f5-4261-a7b3-402c988ff5cc"/>
+    <managerType typeId="096ca6fd-1def-4e92-bcf9-53a0e517b095" valueTypeId="c59cacdb-0e7e-4f03-bca9-483c02b86c4b"/>
+    <recordSetType typeId="f53abc1d-59f4-4b88-a0f4-c405de5726e4" valueTypeId="8118a67a-f500-4d13-beef-4841a436d5cb"/>
+    <recordKeyType typeId="821025fe-7bba-44c4-a633-591c4f1f93ee" valueTypeId="3f9f3564-8311-4711-a1ba-30439fa9c37a"/>
+    <recordType typeId="8f640419-9946-41be-b19c-b17b9ab37957" valueTypeId="0c97631e-7535-4200-8b5b-61f998e6befc"/>
+    <recalcsType typeId="cf60021b-c1e6-4dbe-88d5-c62050846dde" valueTypeId="c02c48b7-c943-48ae-b693-5c5766a8ac35"/>
+  </producedTypes>
+  <name>ВКМ_Удержания</name>
+  <synonym>
+    <key>ru</key>
+    <value>Удержания</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <periodicity>Month</periodicity>
+  <chartOfCalculationTypes>ChartOfCalculationTypes.ВКМ_Удержания</chartOfCalculationTypes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <listPresentation>
+    <key>ru</key>
+    <value>Удержания</value>
+  </listPresentation>
+  <resources uuid="c3265107-e7b2-49f2-b855-ef19889fed1c">
+    <name>Результат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="5ba6bb99-71e2-4c23-bc6a-c2be78325bec">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="efa148cb-d026-4b62-ab0c-db08b41fb027">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+</mdclass:CalculationRegister>

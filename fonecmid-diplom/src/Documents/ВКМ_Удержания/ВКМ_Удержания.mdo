@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e9e4ce5-d28e-440e-8b86-71f67b311382">
+  <producedTypes>
+    <objectType typeId="e5a649ca-57f1-40a6-b165-0bee2c003175" valueTypeId="6834b58e-62c4-4add-8f92-e738b3253abe"/>
+    <refType typeId="ca393a71-55be-48c3-b305-416e19c2b604" valueTypeId="3b7810c4-d0fe-4680-8d76-9f5e6f2568b0"/>
+    <selectionType typeId="cffbeadb-b6e9-4076-8730-c9ec3ebfc63a" valueTypeId="d6bee041-82b9-4b13-97aa-19f911a230bd"/>
+    <listType typeId="f1d4573d-0097-4a65-9591-f66a507a4eae" valueTypeId="679c14b1-3d1b-451f-8ff1-5de2fedb501f"/>
+    <managerType typeId="09237cfe-3e0a-42ac-a82a-2ad2a4f931b3" valueTypeId="2d8aa2f1-9802-4bd6-ad4f-6bb97360138b"/>
+  </producedTypes>
+  <name>ВКМ_Удержания</name>
+  <synonym>
+    <key>ru</key>
+    <value>Удержания</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ВКМ_Удержания.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <registerRecords>CalculationRegister.ВКМ_Удержания</registerRecords>
+  <registerRecords>AccumulationRegister.ВКМ_ВзаиморасчетыССорудниками</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <tabularSections uuid="772926a0-0609-4a25-a947-d3f9d569a29d">
+    <producedTypes>
+      <objectType typeId="27d9cd72-6853-4a03-b4d6-341baf8048d3" valueTypeId="2835c58b-51ad-40bf-8512-2bc8fdc2e8c6"/>
+      <rowType typeId="23df8d4f-62cb-462c-8d8d-98de39ee264b" valueTypeId="6896ea21-964e-4bde-8850-6a1aec42622e"/>
+    </producedTypes>
+    <name>СписокСотрудников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список сотрудников</value>
+    </synonym>
+    <attributes uuid="437b5f90-0a65-4ab7-89ed-ab8b01b5b93e">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="89a0d3a4-845b-4133-8283-245428d08fdb">
+      <name>ВидУдержания</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид удержания</value>
+      </synonym>
+      <type>
+        <types>ChartOfCalculationTypesRef.ВКМ_Удержания</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="162854f3-c0b7-461a-90c4-981f410833ae">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>
