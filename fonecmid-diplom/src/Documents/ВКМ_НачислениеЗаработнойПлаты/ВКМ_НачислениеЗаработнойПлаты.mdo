@@ -44,7 +44,21 @@
         <value>Сотрудник</value>
       </synonym>
       <type>
-        <types>CatalogRef.Пользователи</types>
+        <types>CatalogRef.ВКМ_Сотрудники</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ba3a0803-0ff5-4c05-aecb-15b46bad01c8">
+      <name>ГрафикРаботы</name>
+      <synonym>
+        <key>ru</key>
+        <value>График работы</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВКМ_ГрафикиРаботы</types>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
@@ -52,10 +66,10 @@
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
     <attributes uuid="901a81fc-54b6-4b46-9fff-9ffd1cd3d9a3">
-      <name>ВидНачисления</name>
+      <name>ВидРасчета</name>
       <synonym>
         <key>ru</key>
-        <value>Вид начисления</value>
+        <value>Вид расчета</value>
       </synonym>
       <type>
         <types>ChartOfCalculationTypesRef.ВКМ_ОсновныеНачисления</types>
@@ -65,18 +79,34 @@
       <dataHistory>Use</dataHistory>
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
-    <attributes uuid="4e2dc7e5-7401-40a2-832b-3698825a9408">
-      <name>Сумма</name>
+    <attributes uuid="b3a6fbb4-0666-4845-9f56-5414d394734a">
+      <name>ДатаНачала</name>
       <synonym>
         <key>ru</key>
-        <value>Сумма</value>
+        <value>Дата начала</value>
       </synonym>
       <type>
-        <types>Number</types>
-        <numberQualifiers>
-          <precision>10</precision>
-          <scale>2</scale>
-        </numberQualifiers>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="43c19e25-0242-43f9-8fc4-41aaf5166f34">
+      <name>ДатаОкончания</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата окончания</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>

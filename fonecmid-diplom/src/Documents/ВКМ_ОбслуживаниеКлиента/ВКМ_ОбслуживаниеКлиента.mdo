@@ -60,16 +60,22 @@
     <dataHistory>Use</dataHistory>
   </attributes>
   <attributes uuid="f5365c93-9fc2-4590-b759-ad9a1b62e8c5">
-    <name>Специалист</name>
+    <name>Сотрудник</name>
     <synonym>
       <key>ru</key>
       <value>Специалист</value>
     </synonym>
     <type>
-      <types>CatalogRef.Пользователи</types>
+      <types>CatalogRef.ВКМ_Сотрудники</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.Категория</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ВКМ_КатегорияСотрудника.EnumValue.Специалист</value>
+      </value>
+    </choiceParameters>
     <fillValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
@@ -205,7 +211,7 @@
       <type>
         <types>String</types>
         <stringQualifiers>
-          <length>250</length>
+          <length>50</length>
         </stringQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>

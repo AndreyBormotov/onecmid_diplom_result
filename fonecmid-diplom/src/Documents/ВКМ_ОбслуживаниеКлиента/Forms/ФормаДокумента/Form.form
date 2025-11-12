@@ -187,9 +187,14 @@
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
       <wrap>true</wrap>
-      <chooseType>true</chooseType>
       <typeDomainEnabled>true</typeDomainEnabled>
       <textEdit>true</textEdit>
+      <choiceParameterLinks>
+        <name>Отбор.Владелец</name>
+        <datapath xsi:type="form:DataPath">
+          <segments>Объект.Клиент</segments>
+        </datapath>
+      </choiceParameterLinks>
     </extInfo>
   </items>
   <items xsi:type="form:FormField">
@@ -201,7 +206,7 @@
       <common>true</common>
     </userVisible>
     <dataPath xsi:type="form:DataPath">
-      <segments>Объект.Специалист</segments>
+      <segments>Объект.Сотрудник</segments>
     </dataPath>
     <extendedTooltip>
       <name>СпециалистРасширеннаяПодсказка</name>

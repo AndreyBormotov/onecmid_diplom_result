@@ -27,4 +27,14 @@
   <content>AccumulationRegister.ВКМ_ВыполненныеСотрудникомРаботы</content>
   <content>CalculationRegister.ВКМ_ОсновныеНачисления</content>
   <content>CalculationRegister.ВКМ_ДополнительныеНачисления</content>
+  <content>Catalog.ВКМ_Сотрудники</content>
+  <content>Enum.ВКМ_КатегорияСотрудника</content>
+  <content>Document.ВКМ_ГрафикОтпусков</content>
+  <content>Report.ВКМ_ВыработкаСпециалистов</content>
+  <content>Report.ВКМ_АнализВыставленныхАктов</content>
+  <content>Report.ВКМ_РасчетыССотрудниками</content>
+  <content>Report.ВКМ_РасходЗапланированныхОтпусков</content>
+  <content>InformationRegister.ВКМ_ГрафикиРаботы</content>
+  <content>Catalog.ВКМ_ГрафикиРаботы</content>
+  <content>DataProcessor.ЗаполнениеГрафика</content>
 </mdclass:Subsystem>
