@@ -28,6 +28,7 @@
       <types>Number</types>
       <numberQualifiers>
         <precision>10</precision>
+        <scale>2</scale>
       </numberQualifiers>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
@@ -39,23 +40,6 @@
     <synonym>
       <key>ru</key>
       <value>Сумма</value>
-    </synonym>
-    <type>
-      <types>Number</types>
-      <numberQualifiers>
-        <precision>10</precision>
-        <scale>2</scale>
-      </numberQualifiers>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-  </attributes>
-  <attributes uuid="281783d1-8fc6-4fe1-a023-da24c82fe14a">
-    <name>УдержаноНДФЛ</name>
-    <synonym>
-      <key>ru</key>
-      <value>Удержано НДФЛ</value>
     </synonym>
     <type>
       <types>Number</types>

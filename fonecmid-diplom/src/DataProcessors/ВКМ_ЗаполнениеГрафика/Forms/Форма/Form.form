@@ -166,7 +166,7 @@
     <name>Объект</name>
     <id>1</id>
     <valueType>
-      <types>DataProcessorObject.ЗаполнениеГрафика</types>
+      <types>DataProcessorObject.ВКМ_ЗаполнениеГрафика</types>
     </valueType>
     <view>
       <common>true</common>

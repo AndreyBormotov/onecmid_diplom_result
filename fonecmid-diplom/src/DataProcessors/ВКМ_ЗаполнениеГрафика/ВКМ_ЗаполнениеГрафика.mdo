@@ -4,13 +4,13 @@
     <objectType typeId="aa4cdab3-8b58-42a2-b72c-b874a8f6954d" valueTypeId="ec448130-96fe-4584-981e-aa0886915cdb"/>
     <managerType typeId="a479c96c-3fd3-49f4-9c1c-fcf38798082e" valueTypeId="4bf056ea-9396-431c-9479-7be891d4836b"/>
   </producedTypes>
-  <name>ЗаполнениеГрафика</name>
+  <name>ВКМ_ЗаполнениеГрафика</name>
   <synonym>
     <key>ru</key>
     <value>Заполнение графика</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
-  <defaultForm>DataProcessor.ЗаполнениеГрафика.Form.Форма</defaultForm>
+  <defaultForm>DataProcessor.ВКМ_ЗаполнениеГрафика.Form.Форма</defaultForm>
   <forms uuid="9ff2fbb0-63db-4eec-82cb-b91eccfa6b05">
     <name>Форма</name>
     <synonym>

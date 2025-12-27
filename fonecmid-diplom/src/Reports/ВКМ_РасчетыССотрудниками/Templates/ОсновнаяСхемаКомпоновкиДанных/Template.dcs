@@ -14,23 +14,22 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаНачальныйОстаток</dataPath>
-			<field>СуммаНачальныйОстаток</field>
+			<dataPath>ВидРасчета</dataPath>
+			<field>ВидРасчета</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокНаНачалоПериода</dataPath>
+			<field>ОстатокНаНачалоПериода</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Остаток на начало периода</v8:content>
 				</v8:item>
 			</title>
-			<role>
-				<dcscom:balance>true</dcscom:balance>
-				<dcscom:balanceGroupName>Сумма</dcscom:balanceGroupName>
-				<dcscom:balanceType>OpeningBalance</dcscom:balanceType>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаПриход</dataPath>
-			<field>СуммаПриход</field>
+			<dataPath>Начислено</dataPath>
+			<field>Начислено</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -39,8 +38,28 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаРасход</dataPath>
-			<field>СуммаРасход</field>
+			<dataPath>Удержано</dataPath>
+			<field>Удержано</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удержано</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокНаКонецПериода</dataPath>
+			<field>ОстатокНаКонецПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток на конец периода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Выплачено</dataPath>
+			<field>Выплачено</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -48,31 +67,117 @@
 				</v8:item>
 			</title>
 		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаКонечныйОстаток</dataPath>
-			<field>СуммаКонечныйОстаток</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Осталось выплатить</v8:content>
-				</v8:item>
-			</title>
-			<role>
-				<dcscom:balance>true</dcscom:balance>
-				<dcscom:balanceGroupName>Сумма</dcscom:balanceGroupName>
-				<dcscom:balanceType>ClosingBalance</dcscom:balanceType>
-			</role>
-		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ВКМ_ВзаиморасчетыССорудникамиОстаткиИОбороты.Сотрудник КАК Сотрудник,
-	ЕСТЬNULL(ВКМ_ВзаиморасчетыССорудникамиОстаткиИОбороты.СуммаНачальныйОстаток, 0) КАК СуммаНачальныйОстаток,
-	ЕСТЬNULL(ВКМ_ВзаиморасчетыССорудникамиОстаткиИОбороты.СуммаПриход, 0) КАК СуммаПриход,
-	ЕСТЬNULL(ВКМ_ВзаиморасчетыССорудникамиОстаткиИОбороты.СуммаРасход, 0) КАК СуммаРасход,
-	ЕСТЬNULL(ВКМ_ВзаиморасчетыССорудникамиОстаткиИОбороты.СуммаКонечныйОстаток, 0) КАК СуммаКонечныйОстаток
+	ВКМ_ВзаиморасчетыССотрудниками.Сотрудник КАК Сотрудник,
+	СУММА(ВКМ_ВзаиморасчетыССотрудниками.Сумма) КАК Начислено,
+	СУММА(ВКМ_Удержания.Результат) КАК Удержано
+ПОМЕСТИТЬ ВТ_Начисления
 ИЗ
-	РегистрНакопления.ВКМ_ВзаиморасчетыССорудниками.ОстаткиИОбороты(&amp;НачалоПериода, &amp;КонецПериода,,,) КАК
-		ВКМ_ВзаиморасчетыССорудникамиОстаткиИОбороты</query>
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками КАК ВКМ_ВзаиморасчетыССотрудниками
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрРасчета.ВКМ_Удержания КАК ВКМ_Удержания
+		ПО ВКМ_ВзаиморасчетыССотрудниками.Регистратор = ВКМ_Удержания.Регистратор
+		И ВКМ_ВзаиморасчетыССотрудниками.Сотрудник = ВКМ_Удержания.Сотрудник
+		И ВКМ_Удержания.ВидНачисления = ВКМ_ВзаиморасчетыССотрудниками.ВидРасчета
+ГДЕ
+	ВКМ_ВзаиморасчетыССотрудниками.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И ВКМ_ВзаиморасчетыССотрудниками.ВидРасчета ССЫЛКА ПланВидовРасчета.ВКМ_ОсновныеНачисления
+	ИЛИ ВКМ_ВзаиморасчетыССотрудниками.ВидРасчета ССЫЛКА ПланВидовРасчета.ВКМ_ДополнительныеНачисления
+СГРУППИРОВАТЬ ПО
+	ВКМ_ВзаиморасчетыССотрудниками.Сотрудник
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВКМ_ВзаиморасчетыССотрудникамиОстаткиДО.Сотрудник КАК Сотрудник,
+	ВКМ_ВзаиморасчетыССотрудникамиОстаткиДО.СуммаОстаток КАК СуммаОстаток
+ПОМЕСТИТЬ ВТ_ОстаткиНаНачалоПериода
+ИЗ
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками.Остатки({&amp;НачалоПериода},) КАК ВКМ_ВзаиморасчетыССотрудникамиОстаткиДО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВКМ_ВзаиморасчетыССотрудникамиОстаткиПосле.Сотрудник КАК Сотрудник,
+	ВКМ_ВзаиморасчетыССотрудникамиОстаткиПосле.СуммаОстаток КАК СуммаОстаток
+ПОМЕСТИТЬ ВТ_ОстаткиНаКонецПериода
+ИЗ
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками.Остатки({&amp;КонецПериода},) КАК
+		ВКМ_ВзаиморасчетыССотрудникамиОстаткиПосле
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВКМ_ВзаиморасчетыССотрудниками.Сотрудник КАК Сотрудник,
+	ВКМ_ВзаиморасчетыССотрудниками.Сумма КАК Выплачено
+ПОМЕСТИТЬ ВТ_Выплаты
+ИЗ
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками КАК ВКМ_ВзаиморасчетыССотрудниками
+ГДЕ
+	ВКМ_ВзаиморасчетыССотрудниками.Регистратор ССЫЛКА Документ.ВКМ_ВыплатаЗарплаты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Начисления.Сотрудник КАК Сотрудник,
+	NULL КАК ОстатокНаНачалоПериода,
+	ВТ_Начисления.Начислено КАК Начислено,
+	ВТ_Начисления.Удержано КАК Удержано,
+	NULL КАК ОстатокНаКонецПериода,
+	NULL КАК Выплачено
+ПОМЕСТИТЬ ВТ_Предвывод
+ИЗ
+	ВТ_Начисления КАК ВТ_Начисления
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ОстаткиНаНачалоПериода.Сотрудник,
+	ВТ_ОстаткиНаНачалоПериода.СуммаОстаток,
+	NULL,
+	NULL,
+	NULL,
+	NULL
+ИЗ
+	ВТ_ОстаткиНаНачалоПериода КАК ВТ_ОстаткиНаНачалоПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_ОстаткиНаКонецПериода.Сотрудник,
+	NULL,
+	NULL,
+	NULL,
+	ВТ_ОстаткиНаКонецПериода.СуммаОстаток,
+	NULL
+ИЗ
+	ВТ_ОстаткиНаКонецПериода КАК ВТ_ОстаткиНаКонецПериода
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Выплаты.Сотрудник,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	ВТ_Выплаты.Выплачено
+ИЗ
+	ВТ_Выплаты КАК ВТ_Выплаты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Предвывод.Сотрудник КАК Сотрудник,
+	СУММА(ВТ_Предвывод.ОстатокНаНачалоПериода) КАК ОстатокНаНачалоПериода,
+	СУММА(ВТ_Предвывод.Начислено) КАК Начислено,
+	СУММА(ВТ_Предвывод.Удержано) КАК Удержано,
+	СУММА(ВТ_Предвывод.ОстатокНаКонецПериода) КАК ОстатокНаКонецПериода,
+	СУММА(ВТ_Предвывод.Выплачено) КАК Выплачено
+ИЗ
+	ВТ_Предвывод КАК ВТ_Предвывод
+СГРУППИРОВАТЬ ПО
+	ВТ_Предвывод.Сотрудник</query>
 	</dataSet>
 	<parameter>
 		<name>НачалоПериода</name>
@@ -88,8 +193,10 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<expression>&amp;Период.ДатаНачала</expression>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>КонецПериода</name>
@@ -105,8 +212,10 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<expression>&amp;Период.ДатаОкончания</expression>
+		<use>Always</use>
 	</parameter>
 	<parameter>
 		<name>Период</name>
@@ -121,6 +230,7 @@
 		</valueType>
 		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
+		<use>Always</use>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -131,16 +241,19 @@
 					<dcsset:field>Сотрудник</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаНачальныйОстаток</dcsset:field>
+					<dcsset:field>ОстатокНаНачалоПериода</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаПриход</dcsset:field>
+					<dcsset:field>Начислено</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаРасход</dcsset:field>
+					<dcsset:field>Удержано</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаКонечныйОстаток</dcsset:field>
+					<dcsset:field>Выплачено</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОстатокНаКонецПериода</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
@@ -148,18 +261,43 @@
 					<dcscor:parameter>Период</dcscor:parameter>
 					<dcscor:value xsi:type="v8:StandardPeriod">
 						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
-						<v8:startDate>2025-10-01T00:00:00</v8:startDate>
-						<v8:endDate>2025-10-31T23:59:59</v8:endDate>
+						<v8:startDate>2025-11-01T00:00:00</v8:startDate>
+						<v8:endDate>2025-11-30T23:59:59</v8:endDate>
 					</dcscor:value>
 					<dcsset:userSettingID>76efa56d-8eb8-439b-89dd-93784619b1cf</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчеты с сотрудниками</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
