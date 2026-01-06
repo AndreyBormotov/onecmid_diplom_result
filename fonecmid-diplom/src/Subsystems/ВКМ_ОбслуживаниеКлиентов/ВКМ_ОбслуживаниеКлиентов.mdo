@@ -29,4 +29,5 @@
   <content>CommandGroup.ВКМ_Документы</content>
   <content>Report.ВКМ_ВыработкаСпециалистов</content>
   <content>CommonCommand.ВКМ_ОткрытьНастройки</content>
+  <content>CommonForm.ВКМ_ФормаНастройки</content>
 </mdclass:Subsystem>

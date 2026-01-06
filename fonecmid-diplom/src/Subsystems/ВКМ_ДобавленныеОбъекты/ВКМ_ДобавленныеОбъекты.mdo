@@ -43,4 +43,5 @@
   <content>ChartOfCalculationTypes.ВКМ_Удержания</content>
   <content>InformationRegister.ВКМ_ГрафикиРаботы</content>
   <content>CommonCommand.ВКМ_ОткрытьНастройки</content>
+  <content>CommonForm.ВКМ_ФормаНастройки</content>
 </mdclass:Subsystem>
