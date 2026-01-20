@@ -119,7 +119,14 @@
     <savedData>true</savedData>
   </attributes>
   <commandInterface>
-    <navigationPanel/>
+    <navigationPanel>
+      <cmiFragmentRecord>
+        <command>InformationRegister.ВКМ_УсловияОплатыСотрудников.StandardCommand.OpenByValue.Сотрудник</command>
+        <group>FormNavigationPanelGoTo</group>
+        <index>0</index>
+        <userVisible/>
+      </cmiFragmentRecord>
+    </navigationPanel>
     <commandBar/>
   </commandInterface>
   <extInfo xsi:type="form:CatalogFormExtInfo"/>
