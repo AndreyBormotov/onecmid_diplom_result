@@ -294,7 +294,6 @@
         <textEdit>true</textEdit>
       </extInfo>
     </items>
-    <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
