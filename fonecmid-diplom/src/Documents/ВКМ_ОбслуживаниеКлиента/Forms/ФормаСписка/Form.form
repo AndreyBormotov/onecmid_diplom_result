@@ -298,6 +298,7 @@
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:LabelFieldExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
+        <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
       </extInfo>
     </items>
