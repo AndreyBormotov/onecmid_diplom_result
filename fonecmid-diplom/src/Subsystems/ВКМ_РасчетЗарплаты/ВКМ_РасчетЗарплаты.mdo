@@ -23,7 +23,6 @@
   <content>Report.ВКМ_РасходЗапланированныхОтпусков</content>
   <content>DataProcessor.ВКМ_ЗаполнениеГрафика</content>
   <content>Report.ВКМ_РасчетыССотрудниками</content>
-  <content>Document.ВКМ_Удержания</content>
   <content>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</content>
   <content>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления</content>
   <content>ChartOfCalculationTypes.ВКМ_Удержания</content>

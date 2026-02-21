@@ -12,7 +12,6 @@
       <commands>Document.ВКМ_ГрафикОтпусков.StandardCommand.OpenList</commands>
       <commands>Document.ВКМ_НачислениеЗаработнойПлаты.StandardCommand.OpenList</commands>
       <commands>Document.ВКМ_НачислениеФиксированныхПремий.StandardCommand.OpenList</commands>
-      <commands>Document.ВКМ_Удержания.StandardCommand.OpenList</commands>
     </placementFragments>
     <placementFragments>
       <group>CommandGroup.ВКМ_РегистрыРасчета</group>
@@ -43,7 +42,6 @@
       <commands>Document.ВКМ_ГрафикОтпусков.StandardCommand.OpenList</commands>
       <commands>Document.ВКМ_НачислениеЗаработнойПлаты.StandardCommand.OpenList</commands>
       <commands>Document.ВКМ_НачислениеФиксированныхПремий.StandardCommand.OpenList</commands>
-      <commands>Document.ВКМ_Удержания.StandardCommand.OpenList</commands>
     </orderFragments>
     <orderFragments>
       <group>CommandGroup.ВКМ_РегистрыРасчета</group>

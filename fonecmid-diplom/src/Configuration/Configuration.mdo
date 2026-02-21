@@ -1251,7 +1251,6 @@
   <documents>Document.ВКМ_ОбслуживаниеКлиента</documents>
   <documents>Document.ВКМ_НачислениеЗаработнойПлаты</documents>
   <documents>Document.ВКМ_НачислениеФиксированныхПремий</documents>
-  <documents>Document.ВКМ_Удержания</documents>
   <documents>Document.ВКМ_ГрафикОтпусков</documents>
   <documents>Document.ВКМ_ВыплатаЗарплаты</documents>
   <documentJournals>DocumentJournal.Деньги</documentJournals>

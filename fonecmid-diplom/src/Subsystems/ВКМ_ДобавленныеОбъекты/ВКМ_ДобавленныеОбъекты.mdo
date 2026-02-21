@@ -33,7 +33,6 @@
   <content>Report.ВКМ_РасходЗапланированныхОтпусков</content>
   <content>Catalog.ВКМ_ГрафикиРаботы</content>
   <content>DataProcessor.ВКМ_ЗаполнениеГрафика</content>
-  <content>Document.ВКМ_Удержания</content>
   <content>Document.ВКМ_ВыплатаЗарплаты</content>
   <content>CalculationRegister.ВКМ_Удержания</content>
   <content>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками</content>
