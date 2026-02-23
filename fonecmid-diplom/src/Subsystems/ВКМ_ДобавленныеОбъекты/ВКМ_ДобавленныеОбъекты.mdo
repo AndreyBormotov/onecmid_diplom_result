@@ -42,4 +42,5 @@
   <content>ChartOfCalculationTypes.ВКМ_Удержания</content>
   <content>InformationRegister.ВКМ_ГрафикиРаботы</content>
   <content>CommonForm.ВКМ_ФормаНастройки</content>
+  <content>InformationRegister.ВКМ_ПроведенныеРеализацииТоваровУслуг</content>
 </mdclass:Subsystem>

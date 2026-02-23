@@ -11,6 +11,7 @@
     <picture>CommonPicture.ИконкаНетология</picture>
   </picture>
   <content>DataProcessor.ВКМ_МассовоеСозданиеАктов</content>
+  <content>InformationRegister.ВКМ_ПроведенныеРеализацииТоваровУслуг</content>
   <subsystems>Справочники</subsystems>
   <subsystems>Операции</subsystems>
 </mdclass:Subsystem>
