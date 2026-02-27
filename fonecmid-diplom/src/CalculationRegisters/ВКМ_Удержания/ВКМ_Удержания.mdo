@@ -41,10 +41,10 @@
     <fullTextSearch>Use</fullTextSearch>
   </resources>
   <attributes uuid="5ba6bb99-71e2-4c23-bc6a-c2be78325bec">
-    <name>Сумма</name>
+    <name>СуммаБаза</name>
     <synonym>
       <key>ru</key>
-      <value>Сумма</value>
+      <value>Сумма база</value>
     </synonym>
     <type>
       <types>Number</types>

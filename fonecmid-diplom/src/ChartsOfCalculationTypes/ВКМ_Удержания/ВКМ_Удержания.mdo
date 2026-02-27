@@ -40,9 +40,10 @@
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
-  <dependenceOnCalculationTypes>OnRegistrationPeriod</dependenceOnCalculationTypes>
+  <dependenceOnCalculationTypes>OnActionPeriod</dependenceOnCalculationTypes>
   <baseCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</baseCalculationTypes>
   <baseCalculationTypes>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления</baseCalculationTypes>
+  <actionPeriodUse>true</actionPeriodUse>
   <predefined>
     <items id="96bf965a-808f-46f5-b829-f20979ff28ce">
       <name>УдержаниеНДФЛ</name>
@@ -54,10 +55,6 @@
       <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Отпуск</base>
       <base>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления.ФиксированнаяПремия</base>
       <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.ПроцентОтПроведеннойРаботы</base>
-      <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</leading>
-      <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Отпуск</leading>
-      <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.ПроцентОтПроведеннойРаботы</leading>
-      <leading>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления.ФиксированнаяПремия</leading>
     </items>
   </predefined>
 </mdclass:ChartOfCalculationTypes>

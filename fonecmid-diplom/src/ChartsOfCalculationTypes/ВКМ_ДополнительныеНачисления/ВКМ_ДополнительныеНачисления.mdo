@@ -40,6 +40,7 @@
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
+  <actionPeriodUse>true</actionPeriodUse>
   <predefined>
     <items id="0075c329-ad34-42eb-9096-0feb5fc20c9d">
       <name>ФиксированнаяПремия</name>
