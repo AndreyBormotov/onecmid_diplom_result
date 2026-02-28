@@ -43,7 +43,6 @@
   <dependenceOnCalculationTypes>OnActionPeriod</dependenceOnCalculationTypes>
   <baseCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</baseCalculationTypes>
   <baseCalculationTypes>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления</baseCalculationTypes>
-  <actionPeriodUse>true</actionPeriodUse>
   <predefined>
     <items id="96bf965a-808f-46f5-b829-f20979ff28ce">
       <name>УдержаниеНДФЛ</name>
